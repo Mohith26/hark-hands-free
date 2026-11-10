@@ -46,7 +46,7 @@ function renderActions(A) {
     const via = { toll: '', dinner: ' on', ups: '', rx: ' at', checkin: '', tickets: ' on' }[id];
     if (hf) {
       return `<div class="act done" data-tip="${esc(e.site)}: certified hands-free. Ran on its own; ${pct2(r.live.rate)} of these needed a fix in the last 3 weeks.">
-        <span class="verb">${icon('check')}${e.done}</span><span class="rest">${e.text}${via}</span>${mark(e)}<span class="rest">${e.site}</span><span class="hf">· on its own</span></div>`;
+        <span class="verb">${icon('check')}${e.done}</span><span class="rest">${e.text}${via}</span>${mark(e)}<span class="rest">${e.site}</span><span class="hf">&middot;&nbsp;on its own</span></div>`;
     }
     return `<div class="act"><span class="verb">${e.verb}</span><span class="rest">${e.text}${via}</span>${mark(e)}<span class="rest">${e.site}</span></div>`;
   }).join('');
@@ -134,7 +134,7 @@ function renderDrift(A) {
     <p class="lead">Refills are <strong>asking first</strong> again. ${e.site} changed its checkout on ${day(d.from)}, and <strong>${d.errsSinceChange} of ${d.runsSinceChange}</strong> hands-free refills since then needed a fix.</p>
     <div class="rule"></div>
     <div class="stats">
-      <div class="stat"><div class="k">Paused after</div><div class="v">${d.runsSinceChange}<small>refills</small></div><div class="s">the change detector's first alarm in ${n(r.live.alarm.index + 1)} hands-free refills</div></div>
+      <div class="stat"><div class="k">Paused after</div><div class="v">${d.runsSinceChange}<small>refills</small></div><div class="s">since the change; first alarm in ${n(r.live.alarm.index + 1)} hands-free refills since ${day(TIMELINE.liveFrom)}</div></div>
       <div class="stat"><div class="k">Mistakes avoided</div><div class="v">${d.avoided}</div><div class="s">through ${day(TIMELINE.end)}, if refills had kept running</div></div>
     </div>
     <div class="ctitle"><span>Change detector</span><span class="legend"><span><i style="background:var(--bar-dark);width:12px;height:2px;vertical-align:3px"></i>Evidence of a change</span><span><i style="background:var(--bar)"></i>Needed a fix</span></span></div>
