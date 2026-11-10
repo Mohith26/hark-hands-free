@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hark · Hands-free (concept)</title>
+<meta name="description" content="Unofficial concept demo: Hark certifies which kinds of Handoff errands can run without a confirmation, with a statistical guarantee on mistakes, and pauses them when a site changes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/hark-mark.svg">
+</head>
+<body>
+<div class="sky" aria-hidden="true"><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div class="cloud c4"></div><div class="haze"></div></div>
+
+<header class="topbar">
+  <div class="tb-left"></div>
+  <nav class="seg" aria-label="Views">
+    <button class="on">Home</button><button>Chat</button><button>Projects</button>
+  </nav>
+  <div class="tb-right">
+    <button class="search"><i data-lucide="search"></i><span>Search</span></button>
+    <div class="avatar" title="Julian Reyes">JR</div>
+  </div>
+</header>
+
+<main class="home">
+  <section class="actions" id="actions" aria-label="Action Buttons"></section>
+
+  <section class="panels">
+    <article class="panel" id="p-handsfree"></article>
+    <article class="panel" id="p-drift"></article>
+    <article class="panel wide" id="p-errands"></article>
+    <article class="panel" id="p-next"></article>
+    <article class="panel" id="p-how"></article>
+  </section>
+
+  <footer class="foot">Unofficial concept demo by Mohith Gajjela. Not affiliated with Hark. Synthetic data. <a href="https://github.com/Mohith26/hark-hands-free">Source</a></footer>
+</main>
+
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
