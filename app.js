@@ -64,7 +64,7 @@ function chartByErrand(A) {
   let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Mistake rate by errand">`;
   for (const t of [0, ymax / 2, ymax]) {
     s += `<line x1="0" x2="${W - padR + 6}" y1="${y(t)}" y2="${y(t)}" stroke="rgba(27,28,31,.08)" />`;
-    s += `<text x="${W}" y="${y(t) + 4}" text-anchor="end">${(t * 100).toFixed(t * 100 % 1 ? 1 : 0)}%</text>`;
+    if (Math.abs(y(t) - y(A.alpha)) > 12) s += `<text x="${W}" y="${y(t) + 4}" text-anchor="end">${(t * 100).toFixed(t * 100 % 1 ? 1 : 0)}%</text>`;
   }
   rows.forEach((r, i) => {
     const cx = gw * i + gw / 2, e = r.errand;
@@ -188,7 +188,7 @@ function chartRisk(r, A) {
   let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Mistakes by cutoff">`;
   for (const t of [0, ymax / 2, ymax]) {
     s += `<line x1="0" x2="${W - padR + 6}" y1="${y(t)}" y2="${y(t)}" stroke="rgba(27,28,31,.08)"/>`;
-    s += `<text x="${W}" y="${y(t) + 4}" text-anchor="end">${(t * 100).toFixed(t * 100 % 1 ? 1 : 0)}%</text>`;
+    if (Math.abs(y(t) - y(A.alpha)) > 12) s += `<text x="${W}" y="${y(t) + 4}" text-anchor="end">${(t * 100).toFixed(t * 100 % 1 ? 1 : 0)}%</text>`;
   }
   curve.forEach((p, i) => {
     const cx = gw * i + gw / 2, emp = p.k / p.n, u = ub[i];
